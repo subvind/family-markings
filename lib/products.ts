@@ -4,7 +4,7 @@
  * variants of the product must implement this interface.
  */
 export interface AbstractProductUpper {
-  usefulFunctionUpper(): string;
+  getUpper(): string;
 }
 
 /**
@@ -16,7 +16,7 @@ export interface AbstractProductLower {
   /**
    * Product B is able to do its own thing...
    */
-  usefulFunctionLower(): string;
+  getLower(): string;
 
   /**
    * ...but it also can collaborate with the ProductA.
@@ -24,5 +24,5 @@ export interface AbstractProductLower {
    * The Abstract Factory makes sure that all products it creates are of the
    * same variant and thus, compatible.
    */
-  anotherUsefulFunctionLower(collaborator: AbstractProductUpper): string;
+  margeWithLower(collaborator: AbstractProductUpper): string;
 }

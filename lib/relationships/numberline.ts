@@ -1,7 +1,8 @@
+import { braidArrays } from '../../helpers/braidArrays';
 import { AbstractProductUpper, AbstractProductLower } from '../products'
 
 export class ConcreteProductUpperNumberline implements AbstractProductUpper {
-  public usefulFunctionUpper(): string {
+  public getUpper(): string {
     // The result of the product A2.
     return ')!@#$%^&*(';
   }
@@ -9,7 +10,7 @@ export class ConcreteProductUpperNumberline implements AbstractProductUpper {
 
 export class ConcreteProductLowerNumberline implements AbstractProductLower {
 
-  public usefulFunctionLower(): string {
+  public getLower(): string {
     // The result of the product B2.
     return '0123456789';
   }
@@ -19,9 +20,10 @@ export class ConcreteProductLowerNumberline implements AbstractProductLower {
    * Product A2. Nevertheless, it accepts any instance of AbstractProductA as
    * an argument.
    */
-  public anotherUsefulFunctionLower(collaborator: AbstractProductUpper): string {
-    const result = collaborator.usefulFunctionUpper();
+  public margeWithLower(collaborator: AbstractProductUpper): string {
+    const lower = this.getLower().split('')
+    const upper = collaborator.getUpper().split('')
     // The result of the B2 collaborating with the (${result})
-    return result;
+    return braidArrays(upper, lower).join('');
   }
 }

@@ -24,5 +24,5 @@ export interface AbstractProductLower {
    * The Abstract Factory makes sure that all products it creates are of the
    * same variant and thus, compatible.
    */
-  anotherUsefulFunctionLower(collaborator: AbstractProductLower): string;
+  anotherUsefulFunctionLower(collaborator: AbstractProductUpper): string;
 }

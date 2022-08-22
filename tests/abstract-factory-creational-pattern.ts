@@ -1,4 +1,4 @@
-import { AbstractFactory, ConcreteFactory1, ConcreteFactory2 } from '../index'
+import { AbstractFactory, ConcreteFactoryAlphabet, ConcreteFactoryNumberline } from '../index'
 
 /**
  * The client code works with factories and products only through abstract
@@ -6,11 +6,11 @@ import { AbstractFactory, ConcreteFactory1, ConcreteFactory2 } from '../index'
  * product subclass to the client code without breaking it.
  */
 function demo(factory: AbstractFactory) {
-  const productA = factory.createProductA();
-  const productB = factory.createProductB();
+  const productA = factory.createProductUpper();
+  const productB = factory.createProductLower();
 
-  console.log(productB.usefulFunctionB());
-  console.log(productB.anotherUsefulFunctionB(productA));
+  console.log(productB.usefulFunctionLower());
+  console.log(productB.anotherUsefulFunctionLower(productA));
 }
 
 function test() {
@@ -18,12 +18,12 @@ function test() {
     * The client code can work with any concrete factory class.
     */
   console.log('DEMO: Testing first factory type...');
-  demo(new ConcreteFactory1());
+  demo(new ConcreteFactoryAlphabet());
 
   console.log('');
 
   console.log('DEMO: Testing second factory type...');
-  demo(new ConcreteFactory2());
+  demo(new ConcreteFactoryNumberline());
 }
 
 test();

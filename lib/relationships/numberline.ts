@@ -1,18 +1,21 @@
 import { braidArrays } from '../../helpers/braidArrays';
+import { toSpecialLowerCase } from '../../helpers/toSpecialLowerCase';
 import { AbstractProductUpper, AbstractProductLower } from '../products'
 
 export class ConcreteProductUpperNumberline implements AbstractProductUpper {
+  collection: string = ')!@#$%^&*('
+
   public getUpper(): string {
     // The result of the product A2.
-    return ')!@#$%^&*(';
+    return this.collection;
   }
 }
 
 export class ConcreteProductLowerNumberline implements AbstractProductLower {
 
-  public getLower(): string {
+  public getLower(collection: string): string {
     // The result of the product B2.
-    return '0123456789';
+    return toSpecialLowerCase(collection);
   }
 
   /**
@@ -20,9 +23,10 @@ export class ConcreteProductLowerNumberline implements AbstractProductLower {
    * Product A2. Nevertheless, it accepts any instance of AbstractProductA as
    * an argument.
    */
-  public margeWithLower(collaborator: AbstractProductUpper): string {
-    const lower = this.getLower().split('')
-    const upper = collaborator.getUpper().split('')
+  public mergeWithLower(collaborator: AbstractProductUpper): string {
+    const collection = collaborator.getUpper()
+    const lower = this.getLower(collection).split('')
+    const upper = collection.split('')
     // The result of the B2 collaborating with the (${result})
     return braidArrays(upper, lower).join('');
   }

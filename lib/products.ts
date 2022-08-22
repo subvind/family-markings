@@ -16,7 +16,7 @@ export interface AbstractProductLower {
   /**
    * Product B is able to do its own thing...
    */
-  getLower(): string;
+  getLower(collection: string): string;
 
   /**
    * ...but it also can collaborate with the ProductA.
@@ -24,5 +24,5 @@ export interface AbstractProductLower {
    * The Abstract Factory makes sure that all products it creates are of the
    * same variant and thus, compatible.
    */
-  margeWithLower(collaborator: AbstractProductUpper): string;
+  mergeWithLower(collaborator: AbstractProductUpper): string;
 }

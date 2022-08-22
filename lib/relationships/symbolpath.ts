@@ -1,23 +1,27 @@
 import { braidArrays } from '../../helpers/braidArrays';
+import { toSpecialLowerCase } from '../../helpers/toSpecialLowerCase';
 import { AbstractProductUpper, AbstractProductLower } from '../products'
 
 export class ConcreteProductUpperSymbolpath implements AbstractProductUpper {
+  collection: string = '~_+{}|:"<>?'
+
   public getUpper(): string {
     // The result of the product A3
-    return '~_+{}|:"<>?';
+    return this.collection;
   }
 }
 
 export class ConcreteProductLowerSymbolpath implements AbstractProductLower {
 
-  public getLower(): string {
+  public getLower(collection: string): string {
     // The result of the product B3.
-    return "`-=[]\\;',./";
+    return toSpecialLowerCase(collection);
   }
 
-  public margeWithLower(collaborator: AbstractProductUpper): string {
-    const lower = this.getLower().split('')
-    const upper = collaborator.getUpper().split('')
+  public mergeWithLower(collaborator: AbstractProductUpper): string {
+    const collection = collaborator.getUpper()
+    const lower = this.getLower(collection).split('')
+    const upper = collection.split('')
     // The result of the B3 collaborating with the (${result})
     return braidArrays(upper, lower).join('');
   }

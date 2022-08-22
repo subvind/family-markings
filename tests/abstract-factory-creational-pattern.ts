@@ -10,8 +10,8 @@ function demo(factory: AbstractFactory) {
   const productB = factory.createProductLower();
 
   console.log('upper:', productA.getUpper());
-  console.log('lower:', productB.getLower());
-  console.log('merge:', productB.margeWithLower(productA));
+  console.log('lower:', productB.getLower(productA.getUpper()));
+  console.log('merge:', productB.mergeWithLower(productA));
 }
 
 function test() {

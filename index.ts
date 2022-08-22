@@ -1,7 +1,8 @@
-import { AbstractFactory, ConcreteFactoryAlphabet, ConcreteFactoryNumberline } from './lib/factories'
+import { AbstractFactory, ConcreteFactoryAlphabet, ConcreteFactoryNumberline, ConcreteFactorySymbolpath } from './lib/factories'
 
 export {
   AbstractFactory,
   ConcreteFactoryAlphabet,
-  ConcreteFactoryNumberline
+  ConcreteFactoryNumberline,
+  ConcreteFactorySymbolpath
 }

@@ -1,16 +1,26 @@
 family-markings
 ========
 
-1: Alphabet
-2: Numberline
-3: Symbolpath
-A: Upper
-B: Lower
+legend:
+1) Alphabet
+2) Numberline
+3) Symbolpath
+A) Upper
+B) Lower
 
 tests:
 ```bash
-Full stack app:
-Application parts: PartAPI1, PartAPI2, PartAPI3, PartWebpage1, PartWebpage2, PartWebpage3, PartView1, PartView2, PartView3
+DEMO: Testing first factory type...
+lower: abcdefghijklmnopqrstuvwxyz
+upper: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+DEMO: Testing second factory type...
+lower: 0123456789
+upper: )!@#$%^&*(
+
+DEMO: Testing third factory type...
+lower: `-=[]\;',./
+upper: ~_+{}|:"<>?
 ```
 
 examples:

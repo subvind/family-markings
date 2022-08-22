@@ -1,4 +1,4 @@
-import { AbstractFactory, ConcreteFactoryAlphabet, ConcreteFactoryNumberline } from '../index'
+import { AbstractFactory, ConcreteFactoryAlphabet, ConcreteFactoryNumberline, ConcreteFactorySymbolpath } from '../index'
 
 /**
  * The client code works with factories and products only through abstract
@@ -24,6 +24,11 @@ function test() {
 
   console.log('DEMO: Testing second factory type...');
   demo(new ConcreteFactoryNumberline());
+
+  console.log('');
+
+  console.log('DEMO: Testing third factory type...');
+  demo(new ConcreteFactorySymbolpath());
 }
 
 test();

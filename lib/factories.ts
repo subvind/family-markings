@@ -2,6 +2,7 @@ import { AbstractProductUpper, AbstractProductLower } from './products'
 
 import { ConcreteProductUpperAlphabet, ConcreteProductLowerAlphabet } from './relationships/alphabet'
 import { ConcreteProductUpperNumberline, ConcreteProductLowerNumberline } from './relationships/numberline'
+import { ConcreteProductUpperSymbolpath, ConcreteProductLowerSymbolpath } from './relationships/symbolpath'
 
 /**
  * The Abstract Factory interface declares a set of methods that return
@@ -43,5 +44,15 @@ export class ConcreteFactoryNumberline implements AbstractFactory {
 
   public createProductLower(): AbstractProductLower {
       return new ConcreteProductLowerNumberline();
+  }
+}
+
+export class ConcreteFactorySymbolpath implements AbstractFactory {
+  public createProductUpper(): AbstractProductUpper {
+      return new ConcreteProductUpperSymbolpath();
+  }
+
+  public createProductLower(): AbstractProductLower {
+      return new ConcreteProductLowerSymbolpath();
   }
 }

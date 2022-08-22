@@ -2,14 +2,16 @@ import { AbstractProductUpper, AbstractProductLower } from '../products'
 
 export class ConcreteProductUpperNumberline implements AbstractProductUpper {
   public usefulFunctionUpper(): string {
-      return 'The result of the product A2.';
+    // The result of the product A2.
+    return ')!@#$%^&*(';
   }
 }
 
 export class ConcreteProductLowerNumberline implements AbstractProductLower {
 
   public usefulFunctionLower(): string {
-    return 'The result of the product B2.';
+    // The result of the product B2.
+    return '0123456789';
   }
 
   /**
@@ -19,6 +21,7 @@ export class ConcreteProductLowerNumberline implements AbstractProductLower {
    */
   public anotherUsefulFunctionLower(collaborator: AbstractProductUpper): string {
     const result = collaborator.usefulFunctionUpper();
-    return `The result of the B2 collaborating with the (${result})`;
+    // The result of the B2 collaborating with the (${result})
+    return result;
   }
 }

@@ -9,8 +9,8 @@ function demo(factory: AbstractFactory) {
   const productA = factory.createProductUpper();
   const productB = factory.createProductLower();
 
-  console.log(productB.usefulFunctionLower());
-  console.log(productB.anotherUsefulFunctionLower(productA));
+  console.log('lower:', productB.usefulFunctionLower());
+  console.log('upper:', productB.anotherUsefulFunctionLower(productA));
 }
 
 function test() {

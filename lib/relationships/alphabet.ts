@@ -5,7 +5,8 @@ import { AbstractProductUpper, AbstractProductLower } from '../products'
   */
 export class ConcreteProductUpperAlphabet implements AbstractProductUpper {
   public usefulFunctionUpper(): string {
-      return 'The result of the product A1.';
+    // The result of the product A1
+    return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   }
 }
 
@@ -15,7 +16,8 @@ export class ConcreteProductUpperAlphabet implements AbstractProductUpper {
 export class ConcreteProductLowerAlphabet implements AbstractProductLower {
 
   public usefulFunctionLower(): string {
-      return 'The result of the product B1.';
+    // The result of the product B1.
+    return 'abcdefghijklmnopqrstuvwxyz';
   }
 
   /**
@@ -25,6 +27,7 @@ export class ConcreteProductLowerAlphabet implements AbstractProductLower {
    */
   public anotherUsefulFunctionLower(collaborator: AbstractProductUpper): string {
       const result = collaborator.usefulFunctionUpper();
-      return `The result of the B1 collaborating with the (${result})`;
+      // The result of the B1 collaborating with the (${result})
+      return result;
   }
 }

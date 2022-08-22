@@ -1,10 +1,10 @@
-import { AbstractProductA, AbstractProductB } from '../products'
+import { AbstractProductUpper, AbstractProductLower } from '../products'
 
 /**
   * These Concrete Products are created by corresponding Concrete Factories.
   */
-export class ConcreteProductA1 implements AbstractProductA {
-  public usefulFunctionA(): string {
+export class ConcreteProductUpperAlphabet implements AbstractProductUpper {
+  public usefulFunctionUpper(): string {
       return 'The result of the product A1.';
   }
 }
@@ -12,9 +12,9 @@ export class ConcreteProductA1 implements AbstractProductA {
 /**
  * These Concrete Products are created by corresponding Concrete Factories.
  */
-export class ConcreteProductB1 implements AbstractProductB {
+export class ConcreteProductLowerAlphabet implements AbstractProductLower {
 
-  public usefulFunctionB(): string {
+  public usefulFunctionLower(): string {
       return 'The result of the product B1.';
   }
 
@@ -23,8 +23,8 @@ export class ConcreteProductB1 implements AbstractProductB {
    * Product A1. Nevertheless, it accepts any instance of AbstractProductA as
    * an argument.
    */
-  public anotherUsefulFunctionB(collaborator: AbstractProductA): string {
-      const result = collaborator.usefulFunctionA();
+  public anotherUsefulFunctionLower(collaborator: AbstractProductUpper): string {
+      const result = collaborator.usefulFunctionUpper();
       return `The result of the B1 collaborating with the (${result})`;
   }
 }

@@ -1,7 +1,7 @@
-import { AbstractProductA, AbstractProductB } from './products'
+import { AbstractProductUpper, AbstractProductLower } from './products'
 
-import { ConcreteProductA1, ConcreteProductB1 } from './relationships/alphabet'
-import { ConcreteProductA2, ConcreteProductB2 } from './relationships/numberline'
+import { ConcreteProductUpperAlphabet, ConcreteProductLowerAlphabet } from './relationships/alphabet'
+import { ConcreteProductUpperNumberline, ConcreteProductLowerNumberline } from './relationships/numberline'
 
 /**
  * The Abstract Factory interface declares a set of methods that return
@@ -12,9 +12,9 @@ import { ConcreteProductA2, ConcreteProductB2 } from './relationships/numberline
  * another.
  */
 export interface AbstractFactory {
-  createProductA(): AbstractProductA;
+  createProductUpper(): AbstractProductUpper;
 
-  createProductB(): AbstractProductB;
+  createProductLower(): AbstractProductLower;
 }
 
 /**
@@ -23,25 +23,25 @@ export interface AbstractFactory {
 * that signatures of the Concrete Factory's methods return an abstract product,
 * while inside the method a concrete product is instantiated.
 */
-export class ConcreteFactory1 implements AbstractFactory {
-  public createProductA(): AbstractProductA {
-      return new ConcreteProductA1();
+export class ConcreteFactoryAlphabet implements AbstractFactory {
+  public createProductUpper(): AbstractProductUpper {
+      return new ConcreteProductUpperAlphabet();
   }
 
-  public createProductB(): AbstractProductB {
-      return new ConcreteProductB1();
+  public createProductLower(): AbstractProductLower {
+      return new ConcreteProductLowerAlphabet();
   }
 }
 
 /**
 * Each Concrete Factory has a corresponding product variant.
 */
-export class ConcreteFactory2 implements AbstractFactory {
-  public createProductA(): AbstractProductA {
-      return new ConcreteProductA2();
+export class ConcreteFactoryNumberline implements AbstractFactory {
+  public createProductUpper(): AbstractProductUpper {
+      return new ConcreteProductUpperNumberline();
   }
 
-  public createProductB(): AbstractProductB {
-      return new ConcreteProductB2();
+  public createProductLower(): AbstractProductLower {
+      return new ConcreteProductLowerNumberline();
   }
 }

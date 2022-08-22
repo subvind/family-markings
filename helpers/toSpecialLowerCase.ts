@@ -1,4 +1,3 @@
-
 export function toSpecialLowerCase (collection: string) {
   collection = collection.replace('~', '`')
   collection = collection.replace('!', '1')

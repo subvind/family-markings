@@ -1,13 +1,6 @@
 family-markings
 ========
 
-legend:
-- 1] Alphabet
-- 2] Numberline
-- 3] Symbolpath
-- A] Upper
-- B] Lower
-
 tests:
 ```bash
 DEMO: Testing first factory type...
@@ -28,19 +21,16 @@ merge: ~`_-+={[}]|\:;"'<,>.?/
 
 examples:
 ```bash
-# npm run examples:basic
-Standard basic app:
-Application parts: PartAPI1
+# npm run examples:alphabet
+family alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZ + abcdefghijklmnopqrstuvwxyz = AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz
 ```
 
 ```bash
-# npm run examples:custom
-Custom app:
-Application parts: PartAPI3, PartWebpage3
+# npm run examples:numberline
+family numberline: )!@#$%^&*( + 0123456789 = )0!1@2#3$4%5^6&7*8(9
 ```
 
 ```bash
-# npm run examples:full-featured
-Standard full featured app:
-Application parts: PartAPI1, PartAPI2, PartAPI3
+# npm run examples:symbolpath
+family symbolpath: ~_+{}|:"<>? + `-=[]\;',./ = ~`_-+={[}]|\:;"'<,>.?/
 ```

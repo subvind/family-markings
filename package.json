@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "examples:basic": "ts-node ./examples/basic.ts",
-    "examples:custom": "ts-node ./examples/custom.ts",
-    "examples:full-featured": "ts-node ./examples/full-featured.ts",
+    "examples:alphabet": "ts-node ./examples/alphabet.ts",
+    "examples:numberline": "ts-node ./examples/numberline.ts",
+    "examples:symbolpath": "ts-node ./examples/symbolpath.ts",
     "tests": "ts-node tests.ts"
   }
 }
